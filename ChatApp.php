@@ -8,57 +8,58 @@
         <script src="ChatApp.js"></script>
     </head>
     <body>
-        <section id="nameList">
-            <div>
-                <p>Name List</p>
-                <ul>
-                    <?php 
-                        include "db_connect.php";
-                        $sql = "SELECT * FROM Users";
-                        $result = $conn->query($sql);
-                        if ($result -> num_rows > 0) {
-                            while ($row = $result-> fetch_assoc()) {
-                                echo "<li>". $row['Name'] ."</li>";
-                            }
-                        }
-                        else {
-                            echo "No Results";
-                        }
-                        $conn-> close();
-                    ?>
-                </ul>
-            </div>
+        <section class="header">
+            <h1>Chat</h1>
         </section>
-        <section id="send">
-            <div>
-                <label for="user">Username: </label>
-                <input type="text" id="user" name="user" placeholder="Username">
-                <span id="nameWarn"></span>
+        <section class="main">
+            <div class ="list">
+                <section id="nameList">
+                    <div>
+                        <p><b>Name List</b></p>
+                        <ul>
+                            <?php 
+                                include "db_connect.php";
+                                $sql = "SELECT * FROM Users";
+                                $result = $conn->query($sql);
+                                if ($result -> num_rows > 0) {
+                                    while ($row = $result-> fetch_assoc()) {
+                                        echo "<li>". $row['Name'] ."</li>";
+                                    }
+                                }
+                                else {
+                                    echo "No Results";
+                                }
+                                $conn-> close();
+                            ?>
+                        </ul>
+                    </div>
+                </section>
             </div>
-            <div>
-                <label for="password">Password: </label>
-                <input type="password" id="pass" name="pass" placeholder="Password">
-                <span id="passWarn"></span>
+            <div class="chat">
+                <section id="send">
+                    <div id="login">
+                        <input type="text" id="user" name="user" placeholder="Username">
+                        <span id="nameWarn"></span>
+                        <input type="password" id="pass" name="pass" placeholder="Password">
+                        <span id="passWarn"></span>
+                    </div>
+                    <textarea id="sendMessage" name="sendMessage" maxlength="16000"></textarea>
+                    <div>
+                        <span id="sendAlert"></span>
+                    </div>
+                </section>
+                <section id="receive">
+                    <div id="listen">
+                        <input type="text" id="receiveUser" name="receiveUser" placeholder="Listen Name">
+                        <span id="rNameWarn"></span>
+                    </div>
+                    <textarea id="receiveMessage" name="receiveMessage" disabled></textarea>
+                    <div>
+                        <span id="receiveAlert"></span>
+                    </div>
+                </section>
             </div>
-            <div>
-                <textarea id="sendMessage" name="sendMessage" rows="10" cols="62"></textarea>
-            </div>
-            <div>
-                <span id="sendAlert"></span>
-            </div>
-        </section>
-        <section id="receive">
-            <div>
-                <label for="receiveUser">Enter a name from the list to listen to: </label>
-                <input type="text" id="receiveUser" name="receiveUser" placeholder="Name">
-                <span id="rNameWarn"></span>
-            </div>
-            <div>
-                <textarea id="receiveMessage" name="receiveMessage" rows="10" cols="62" disabled></textarea>
-            </div>
-            <div>
-                <span id="receiveAlert"></span>
-            </div>
+            <div class="line"></div>
         </section>
     </body>
 </html>

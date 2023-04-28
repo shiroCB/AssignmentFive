@@ -15,13 +15,12 @@ function sendText() {
     }
 
     $.ajax({
-        url: "MessageToDatabase.php",
+        url: "MsgToDatabase.php",
         method: "POST", 
         data: messageData,
         dataType: "text"
     })
     .done(function(data, textStatus, jqXHR) {
-        console.log(data);
         if (data == "INVALID_LOGIN")
             $("#sendAlert").text("Invalid Username/Password");
         else if (data == "QUERY_ERROR")
@@ -41,21 +40,10 @@ function sendText() {
 
 function checkLogin() {
     if ($("#user").val().length == 0) {
-        $("#nameWarn").text("Enter Username.");
+        $("#sendAlert").text("Enter Username.");
         return true;
     } else if ($("#pass").val().length == 0) {
-        $("#passWarn").text("Enter Password.");
-        $("#nameWarn").text("");
-        return true;
-    }
-    $("#passWarn").text("");
-    $("#nameWarn").text("");
-    return false;
-}
-
-function checkListen() {
-    if ($("#receiveUser").val.length == 0) {
-        $("#rNameWarn").text("Enter a Name to Listen to.");
+        $("#sendAlert").text("Enter Password.");
         return true;
     }
     return false;
@@ -87,10 +75,11 @@ function getText() {
             $("#receiveAlert").text("SQL Query Error");
         else if (data == "GET_ERROR")
             $("#receiveAlert").text("SQL Get Error");
-        else 
+        else {
             $("#receiveMessage").val(data);
-            $("#receiveAlert").text("");
+            $("#receiveAlert").text("Listening to " + user);
         // console.log(data);  
+        }
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
         console.log(errorThrown);

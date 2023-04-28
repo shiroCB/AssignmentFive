@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: #0E1D35;
+    color: #DDDEE5;
+}
+
+input {
+    background-color: #2B3D5B;
+    border: 2px solid #C3C3C3;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px 10px 15px 10px;
+    font-size: 14pt;
+    color: #DDDEE5;
+}
+
+input:focus {
+    background-color: #2a3950;
+    border: 2px solid #C3C3C3;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px 10px 15px 10px;
+    font-size: 14pt;
+    color: #DDDEE5;
+}
+
+textarea {
+    background-color: #2B3D5B;
+    border: 2px solid #C3C3C3;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+    height: 500px;
+    width: 600px;
+    margin-bottom: 20px;
+    font-size: 16pt;
+    color: #DDDEE5;
+}
+
+textarea:focus {
+    background-color: #2a3950;
+    border: 2px solid #C3C3C3;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+    height: 500px;
+    width: 600px;
+    margin-bottom: 20px;
+    font-size: 16pt;
+    color: #DDDEE5;
+}
+
+li {
+    padding: 10px;
+    margin-right: 40px;
+    color: #DDDEE5;
+}
+
+span {
+    font-size: 14pt;
+    color: #DDDEE5;
+}
+
+.header {
+    text-align: center;
+    font-size: 30pt;
+    color: #1E3E45;
+    margin: auto;
+    text-shadow: 0px 0px 5px white;
+    -webkit-text-stroke: 0.01px #D4C8B7;
+}
+
+.main {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: 2px solid #D4C8B7;
+    border-bottom: 2px solid #D4C8B7;
+}
+.list {
+    display: flex;  
+    margin: 20px 20px 20px 20px;
+    height: 593px;
+    align-items: top;
+    border-right: 2px solid #D4C8B7; 
+    border-left: 2px solid #D4C8B7; 
+    font-size: 14pt;
+}
+
+.chat {
+    display: flex;
+    flex-direction: row;
+}
+
+.line {
+    border-right: 2px solid #D4C8B7; 
+    height: 593px;
+    margin: 20px 20px 20px 20px;
+}
+
+#send {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+}
+
+#receive {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 20px 20px;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 622.5px;
+}
+
+#listen {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 622.5px;
+}
+
+::placeholder {
+    color: #7C8594;
+}
